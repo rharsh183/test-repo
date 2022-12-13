@@ -1,12 +1,12 @@
 
 import { useState, useEffect } from "react";
+import List from "./List";
 
 
 function App() {
 
   return (
     <div className="App">
-      <UseFetch />
       <List />
     </div>
   );

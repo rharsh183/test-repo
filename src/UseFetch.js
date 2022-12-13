@@ -28,4 +28,4 @@ function UseFetch(url) {
     return { data, isLoading, error }
 }
 
-export default useFetch
+export default UseFetch

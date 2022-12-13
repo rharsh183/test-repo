@@ -1,13 +1,13 @@
 import React from 'react';
-import useFetch from './useFetch';
+import UseFetch from './UseFetch';
 
 function PrizeList() {
-    const { data } = useFetch('http://api.nobelprize.org/v1/prize.json?year=2017&yearTo=2017')
+    const { data } = UseFetch('http://api.nobelprize.org/v1/prize.json?year=2017&yearTo=2017')
 
     return (
         <div className="prize-list-2017-container">
             <h1>2017</h1>
-            {data.map(prize => (
+            {data && data.prizes && data.prizes.map(prize =>  (
                 <div key={prize.id}>
                     <h2>{prize.category}</h2>
                 </div>
