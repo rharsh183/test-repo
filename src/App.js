@@ -1,25 +1,30 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import Records from "./records.json";
 
 function App() {
-  const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("./noble.json")
-      .then((res) => setUsers(res.data))
-      .catch((err) => console.log(err));
-  }, []);
 
   return (
     <div>
-      <ul>
-        {users.map((user, index) => (
-          <li key={index}>
-            #{user.laureates.id}: {user.laureates.first_name} 
-          </li>
-        ))}
-      </ul>
+      <div>
+        {
+          Records.prizes && Records.prizes.map((prize,index) => {
+            return (
+                  <div key = {index}>         
+                  <div className="main">
+                        <p>{prize.year}</p>     
+                    <div className="left">
+                        Left
+                    </div>
+                    <div className="right">
+                      right
+                    </div>
+                  </div>           
+                </div>
+            )
+          })
+        }
+      </div>
     </div>
   );
 }
