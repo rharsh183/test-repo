@@ -2,7 +2,7 @@ import React from 'react';
 import UseFetch from './UseFetch';
 
 function PrizeList() {
-    const { data } = UseFetch('http://api.nobelprize.org/v1/prize.json?year=2017&yearTo=2017')
+    const { data } = UseFetch('http://api.nobelprize.org/v1/prize.json?year=2022&yearTo=2022')
 
     return (
         <div className="prize-list-2017-container">
